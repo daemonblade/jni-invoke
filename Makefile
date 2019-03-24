@@ -8,5 +8,8 @@ LDFLAGS=	-L${LIBHOME} -ljvm
 
 main: main.o
 
-run:
+M.class: M.java
+	javac M.java
+
+run: main M.class
 	env LD_LIBRARY_PATH=${LIBHOME} ./main
